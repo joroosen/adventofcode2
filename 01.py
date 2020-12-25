@@ -11,4 +11,4 @@ for a, b, c in itertools.combinations(mylist, 3):
         print(int(a) * int(b) * int(c))
         break
 
-print("--- %s seconds ---" % (time.time() - start_time))
+print(f"--- {time.time() - start_time} seconds ---")
