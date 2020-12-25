@@ -13,7 +13,20 @@ for entry in mylist:
     if int(policy_number[0]) <= password.count(policy_letter) <= int(policy_number[1]):
         valid_passwords += 1
 
-print(f'Valid passwords: {valid_passwords}')
+print(f'Valid passwords - Part 1: {valid_passwords}')
+
+valid_passwords = 0
+for entry in mylist:
+    policy_number = ((entry.split(": ", 1)[0]).split(" ", 1)[0]).split("-", 1)
+    policy_letter = (entry.split(": ", 1)[0]).split(" ", 1)[1]
+    password = entry.split(": ", 1)[1]
+    if (password[int(policy_number[0])-1] == policy_letter or
+        password[int(policy_number[1])-1] == policy_letter) and not\
+            (password[int(policy_number[0])-1] == policy_letter and
+             password[int(policy_number[1])-1] == policy_letter):
+        valid_passwords += 1
+
+print(f'Valid passwords - Part 2: {valid_passwords}')
 
 print(f"--- {time.time() - start_time} seconds ---")
 
