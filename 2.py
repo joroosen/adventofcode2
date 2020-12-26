@@ -30,7 +30,8 @@ print(f'Valid passwords - Part 2: {valid_passwords}')
 
 print(f"--- {time.time() - start_time} seconds ---")
 
-#oplossing Beto:
+
+#cool approach from Beto:
 # import re
 #
 # pattern = re.compile(r"^(\d+)-(\d+) (\w): (\w+)$")
